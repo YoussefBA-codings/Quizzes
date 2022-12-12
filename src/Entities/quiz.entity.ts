@@ -1,15 +1,15 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity("quizzes")
+@Entity('quizzes')
 export class Quiz {
   @PrimaryGeneratedColumn({
-    comment: "The quiz must have unique identifier",
+    comment: 'The quiz must have unique identifier',
   })
-  id: number;
+    id: number;
 
   @Column()
-  title: string;
+    title: string;
 
   @Column()
-  description: string;
+    description: string;
 }
