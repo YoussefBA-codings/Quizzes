@@ -19,7 +19,11 @@ export class QuizService {
   }
 
   async getQuizById(id: number) {
-    return this.quizRepository.findOneById(id);
+    const quiz = await this.quizRepository.findOne({  
+      where: { id: id },
+      relations: ['questions'],
+    });
+    return quiz;
   }
 
   async updateQuiz(id: number, body: UpdateQuizDto) {
